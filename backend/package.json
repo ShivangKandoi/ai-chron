@@ -1,0 +1,25 @@
+{
+  "name": "ai-chron-backend",
+  "version": "1.0.0",
+  "description": "AI Chron Backend Server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dockerode": "^4.0.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "react-svg": "^16.2.0",
+    "socket.io": "^4.6.1",
+    "axios": "^1.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

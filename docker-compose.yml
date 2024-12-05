@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:3000
+      - VITE_WS_URL=ws://localhost:3000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - project_data:/app/projects
+    environment:
+      - MONGODB_URI=mongodb+srv://phantom:Shivang_0@cursorclone.xclt7.mongodb.net/?retryWrites=true&w=majority&appName=CursorClone
+      - JWT_SECRET=aichron_secret_key_2024
+
+volumes:
+  project_data: 
